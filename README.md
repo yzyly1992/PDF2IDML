@@ -13,5 +13,9 @@ Currently, it just starts with this big idea, has not got any code yet. A projec
 PDF is the most popular format to record and present documents, Indesign is the most popular software to edit and layout the document. However, there is only one way transformation from Indesign to PDF, but not the other from PDF to Indesign. 
 
 There are several solutions on the market, but not ideal or free. 
-- [[PDF2ID]()]: A commercial software that can import PDF into Indesign.  
-- [[PDF2DTP]()]: Similar to PDF2ID. The biggist different is PDF2DTP parse the text to paragraph, while PDF2ID parse the text into single line.  
+- [[PDF2ID](https://www.recosoft.com/products/pdf2id/)]: A commercial software that can import PDF into Indesign.  
+- [[PDF2DTP](https://markzware.com/products/pdf2dtp/)]: Similar to PDF2ID. The biggist different is PDF2DTP parse the text to paragraph, while PDF2ID parse the text into single line.  
+
+## Big Idea
+
+The general concept is that using current python library to parse pdf to text, image, layout, and style data, then using these data to rebuild the idml file that Indesign can 
