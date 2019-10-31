@@ -16,6 +16,8 @@ There are several solutions on the market, but not ideal or free.
 - [[PDF2ID](https://www.recosoft.com/products/pdf2id/)]: A commercial software that can import PDF into Indesign.  
 - [[PDF2DTP](https://markzware.com/products/pdf2dtp/)]: Similar to PDF2ID. The biggist different is PDF2DTP parse the text to paragraph, while PDF2ID parse the text into single line.  
 
+IDML (*InDesign Markup Language*) files are a Zip archives (Adobe calls them packages) storing essentially XML files. Adobe made a descent job because those files can completely express the content of the native (binary) documents. It is a potential format that could be translated and modified easily from other formats (PDF, PPT, EPUB, ...)
+
 ## Big Idea
 
 The general concept is that using current python library to parse pdf to text, image, layout, and style data, then using these data to rebuild the idml file that Indesign can read and edit. Within the general concept, there are two roads can go:
@@ -33,4 +35,28 @@ The general concept is that using current python library to parse pdf to text, i
 
 
 ## Reference Projects
+
+- [[SimpleIDML]](https://github.com/Starou/SimpleIDML): SimpleIDML is a Python library to manipulate Adobe® InDesign® IDML file. The main purpose being the ability to compose IDML files together and produce complex documents from simple pieces and to separate the data from the structure.
+
+  The philosophy behind SimpleIDML is to keep separated the content and the structure and to use XML files to feed your documents by using the XML Structure in InDesign. Keeping this isolation is important to ease the debugging and to keep track of what is going on.
+
+- [[pdfminer]](https://github.com/euske/pdfminer/): PDFMiner is a tool for extracting information from PDF documents. Unlike other PDF-related tools, it focuses entirely on getting and analyzing text data. PDFMiner allows one to obtain the exact location of text in a page, as well as other information such as fonts or lines. It includes a PDF converter that can transform PDF files into other text formats (such as HTML). It has an extensible PDF parser that can be used for other purposes than text analysis.
+
+- [[PyPDF2]](https://github.com/mstamy2/PyPDF2): PyPDF2 could extract images from PDF with other decoding library.
+
+- [[PyMuPDF]](https://github.com/pymupdf/PyMuPDF): PyMuPDF could be used to extract images and fonts from PDF. PNG is the image format that PyMuPDF export to.
+
+- [[minecart]](https://github.com/felipeochoa/minecart): minecart is a Python package that simplifies the extraction of text, images, and shapes from a PDF document. It provides a very Pythonic interface to extract positioning, color, and font metadata for all of the objects in the PDF.
+
+
+
+## Revisions
+
+#### Beta 0.0.1 - 10/22/2019
+
+- Start README.md, add badge icons.
+
+#### Beta 0.0.2 - 10/30/2019
+
+- Complete README.md with chapters: big idea, road map, and reference projects.
 
