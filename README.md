@@ -60,3 +60,9 @@ The general concept is that using current python library to parse pdf to text, i
 
 - Complete README.md with chapters: big idea, road map, and reference projects.
 
+#### Beta 0.0.3 - 11/11/2019
+
+- Read and test about [[pdfminer]](https://github.com/euske/pdfminer/) library. Check different typologies of pdf and their output results.
+
+
+
