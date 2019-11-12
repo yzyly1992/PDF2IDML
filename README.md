@@ -54,15 +54,28 @@ The general concept is that using current python library to parse pdf to text, i
 
 #### Beta 0.0.1 - 10/22/2019
 
-- Start README.md, add badge icons.
+Start README.md, add badge icons.
 
 #### Beta 0.0.2 - 10/30/2019
 
-- Complete README.md with chapters: big idea, road map, and reference projects.
+Complete README.md with chapters: big idea, road map, and reference projects.
 
 #### Beta 0.0.3 - 11/11/2019
 
-- Read and test about [[pdfminer]](https://github.com/euske/pdfminer/) library. Check different typologies of pdf and their output results.
+Read and test about [[pdfminer]](https://github.com/euske/pdfminer/) library. Check different typologies of pdf and their output results. 
+
+The pdfminer seems only working with text in PDF. It has different formats to export with different information attached. Text format basically only include content of text; HTML did a good job to maintain the format and layout of the text; XML did the same work as HTML. However, it composed each character of the words into an individual unit of format and layout. The one information of the PDF missing for pdfminer is the size of the pages.
+
+Since the HTML is the more ideal exported format to maintain the integraty and accuracy of the PDF text. The next step is to convert the html into indesign format / idml. Several relevent projects were found below.
+
+- [[ickmull]](https://code.google.com/archive/p/ickmull/): Converts XHTML to IDML/ICML.
+- [[jaumeortola/ickmull]](https://github.com/jaumeortola/ickmull/tree/ickmull/ickmull): github version of ickmull
+- [[Tutorial on .icml]](https://vishmili.wordpress.com/papers-on-publishing/ickmull/): A blog tutors how to convert html by using ickmull.
+- [[Pandoc]](https://pandoc.org/): A universal document converter that could convert html to icml.
+- [[Id-extras]](https://www.id-extras.com/html-import-script/): An InDesign HTML Import Script.
+
+
+
 
 
 
