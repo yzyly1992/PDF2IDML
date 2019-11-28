@@ -48,6 +48,8 @@ The general concept is that using current python library to parse pdf to text, i
 
 - [[minecart]](https://github.com/felipeochoa/minecart): minecart is a Python package that simplifies the extraction of text, images, and shapes from a PDF document. It provides a very Pythonic interface to extract positioning, color, and font metadata for all of the objects in the PDF.
 
+- [[slate]](https://github.com/timClicks/slate): Slate is a Python package that simplifies the process of extracting text from PDF files. It depends on the PDFMiner package. (No layout information converted)
+
 
 
 ## Revisions
@@ -68,11 +70,23 @@ The pdfminer seems only working with text in PDF. It has different formats to ex
 
 Since the HTML is the more ideal exported format to maintain the integraty and accuracy of the PDF text. The next step is to convert the html into indesign format / idml. Several relevent projects were found below.
 
-- [[ickmull]](https://code.google.com/archive/p/ickmull/): Converts XHTML to IDML/ICML.
+- [[ickmull]](https://code.google.com/archive/p/ickmull/): Converts XHTML to IDML/ICML. -- *No layout information, No font, one text box*
 - [[jaumeortola/ickmull]](https://github.com/jaumeortola/ickmull/tree/ickmull/ickmull): github version of ickmull
 - [[Tutorial on .icml]](https://vishmili.wordpress.com/papers-on-publishing/ickmull/): A blog tutors how to convert html by using ickmull.
-- [[Pandoc]](https://pandoc.org/): A universal document converter that could convert html to icml.
-- [[Id-extras]](https://www.id-extras.com/html-import-script/): An InDesign HTML Import Script.
+- [[Pandoc]](https://pandoc.org/): A universal document converter that could convert html to icml -- *Successfully convert html to icml; the icml is invalid and can not be opened in inDesign or inCopy; no layout information in icml; export to xml, only text, no layout*
+- [[Id-extras]](https://www.id-extras.com/html-import-script/): An InDesign HTML Import Script. -- *Can only import the contents online; can only import into one text box; no font, layout, style information*
+
+#### Beta 0.0.3 - 11/27/2019
+
+Test the 4 methods above, all of them are failed to convert html to icml/idml with layout, style information. Going to test other PDF parsers: 
+
+- [[PyPDF2]](https://github.com/mstamy2/PyPDF2): Tried pdf-image-extractor.py, no working.
+- [[PyMuPDF]](https://github.com/pymupdf/PyMuPDF): The export result is similar to [[pdfminer]](https://github.com/euske/pdfminer/). HTML is still the best export format including most complete information. It also include images comparing to pdfminer. XML is the second ideal format, however, it format each character of the text instead of a paragraph. And XML has no image information either.
+- [[minecart]](https://github.com/felipeochoa/minecart): Coding running error since the wrong pdfminer library using.
+
+Since there is no ideal direct solution so far, the next step would deep down the pdfminer library and SimpleIDML library to extract and convert the raw data instead of indirectly converting to other formats.
+
+
 
 
 
