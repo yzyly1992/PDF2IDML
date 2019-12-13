@@ -76,7 +76,7 @@ Since the HTML is the more ideal exported format to maintain the integraty and a
 - [[Pandoc]](https://pandoc.org/): A universal document converter that could convert html to icml -- *Successfully convert html to icml; the icml is invalid and can not be opened in inDesign or inCopy; no layout information in icml; export to xml, only text, no layout*
 - [[Id-extras]](https://www.id-extras.com/html-import-script/): An InDesign HTML Import Script. -- *Can only import the contents online; can only import into one text box; no font, layout, style information*
 
-#### Beta 0.0.3 - 11/27/2019
+#### Beta 0.0.4 - 11/27/2019
 
 Test the 4 methods above, all of them are failed to convert html to icml/idml with layout, style information. Going to test other PDF parsers: 
 
@@ -85,6 +85,18 @@ Test the 4 methods above, all of them are failed to convert html to icml/idml wi
 - [[minecart]](https://github.com/felipeochoa/minecart): Coding running error since the wrong pdfminer library using.
 
 Since there is no ideal direct solution so far, the next step would deep down the pdfminer library and SimpleIDML library to extract and convert the raw data instead of indirectly converting to other formats.
+
+#### Beta 0.0.5 - 12/3/2019
+
+Check the [[SimpleIDML]](https://pypi.org/project/SimpleIDML/) document and test it on a project example. SimpleIDML has basic functions of parsing and reading IDML files, extracting contents and structures of an IDML, inserting elements to IDML, merging multiple IDML together, converting different formats related to IDML. 
+
+However, SimpleIDML does not have ability to compose new elements from raw data. What we need first step is to writing a composer that can format the raw data into the element that SimpleIDML can directly add or insert. Before this, we need to study about the standard structure of IDML. [[IDML Specification]](https://wwwimages.adobe.com/content/dam/acom/en/devnet/indesign/sdk/cs6/idml/idml-specification.pdf)
+
+
+
+
+
+
 
 
 
