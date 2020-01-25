@@ -92,6 +92,12 @@ Check the [[SimpleIDML]](https://pypi.org/project/SimpleIDML/) document and test
 
 However, SimpleIDML does not have ability to compose new elements from raw data. What we need first step is to writing a composer that can format the raw data into the element that SimpleIDML can directly add or insert. Before this, we need to study about the standard structure of IDML. [[IDML Specification]](https://wwwimages.adobe.com/content/dam/acom/en/devnet/indesign/sdk/cs6/idml/idml-specification.pdf)
 
+#### Beta 0.0.6 - 1/24/2019
+
+SimpleIDML can not edit layout and text style, which are essential information to create an IDML file. Need to go back to origin, and check the official document about InDesign Scripting. [InDesign Scripting Tutorial](https://www.adobe.com/content/dam/acom/en/devnet/indesign/sdk/cs6/scripting/InDesign_ScriptingTutorial.pdf) 
+
+
+
 
 
 
