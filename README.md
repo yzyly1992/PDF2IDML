@@ -92,11 +92,17 @@ Check the [[SimpleIDML]](https://pypi.org/project/SimpleIDML/) document and test
 
 However, SimpleIDML does not have ability to compose new elements from raw data. What we need first step is to writing a composer that can format the raw data into the element that SimpleIDML can directly add or insert. Before this, we need to study about the standard structure of IDML. [[IDML Specification]](https://wwwimages.adobe.com/content/dam/acom/en/devnet/indesign/sdk/cs6/idml/idml-specification.pdf)
 
-#### Beta 0.0.6 - 1/24/2019
+#### Beta 0.0.6 - 1/24/2020
 
-SimpleIDML can not edit layout and text style, which are essential information to create an IDML file. Need to go back to origin, and check the official document about InDesign Scripting. [InDesign Scripting Tutorial](https://www.adobe.com/content/dam/acom/en/devnet/indesign/sdk/cs6/scripting/InDesign_ScriptingTutorial.pdf) 
+SimpleIDML can not edit layout and text style, which are essential information to create an IDML file. Need to go back to origin, and check the official document about InDesign Scripting. [InDesign Scripting Tutorial](https://www.adobe.com/content/dam/acom/en/devnet/indesign/sdk/cs6/scripting/InDesign_ScriptingTutorial.pdf). 
 
+#### Beta 0.0.7 - 1/29/2020
 
+It is possible to write an InDesign plugin to extract the data from pdf and compose an InDesign file. InDesign Script supports multiple programming languages. However, JavaScript would be the most modern and popular language to script InDesign Plugin. Through reading the [[Adobe InDesign CS6 JavaScript Scripting Guide]](https://www.adobe.com/content/dam/acom/en/devnet/indesign/sdk/cs6/scripting/InDesign_ScriptingGuide_JS.pdf), it seems promising to compose an InDesign file through JavaScript programming, and control all the editable contents inside the InDesign. The major problem would be that how to extract information from PDF? 
+
+PPT is another popular document format that has similar file structure with .idml. You can change the .pptx  suffix to .zip suffix, then unzip it to a folder. The uncompressed contents include all the media data(images, sounds, videos) and .xml which descript the slides, layouts, texts, and shapes. It seems possible to extract the complete information including pages, layouts, contents, images, from the uncompressed .pptx file. It may be easier to start with PPT instead of PDF. 
+
+[[ExtendScript Toolkit]](https://www.adobe.com/devnet/scripting/estk.html) would be the tool to programming InDesign Plugin through JavaScript. It contains all the available InDesign Object Model and descriptions. 
 
 
 
