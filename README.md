@@ -104,6 +104,35 @@ PPT is another popular document format that has similar file structure with .idm
 
 [[ExtendScript Toolkit]](https://www.adobe.com/devnet/scripting/estk.html) would be the tool to programming InDesign Plugin through JavaScript. It contains all the available InDesign Object Model and descriptions. 
 
+#### Beta 0.0.8 - 2/7/2020
+
+Analyse the file structure and information from .pptx
+.pptx -> .zip -> unzip
+docProps -> app.xml: Words, PresentationFormat, Word, Slides, Paragraphs, Notes, Hidden Slides, Title of Parts
+docProps -> core.xml: "dc:title", "dc:creator", "cp:lastModifiedBy", "dcterms:created", "dcterms:modified"
+ppt -> presentation.xml: "p:sldMasterIdLst", "p:sldMasterId", "p:sldIdLst", "p:sldId", "p:sldSz"
+ppt -> presProps.xml: "p:extLst", "p:ext"
+ppt -> tableStyles.xml:
+ppt -> viewProp.xml: 
+_rels -> presentation.xml.rels: "Relationships", "Relationship"(Id, Target)
+media -> images
+slideLayouts -> slideLayout?.xml: 
+slideLayouts -> _rels -> slideLayout?.xml.rels: ## Relation to master slides
+slideMasters -> slideMaster?.xml:
+slideMasters -> _rels -> slideMaster?.xml.rels: ## Master relation to slides
+slides -> slide?.xml: "p:sp", "p:txBody", "p:pic", "a:p", "p:blipFill", "a:srcRect" ...
+slides -> _rels -> slide?.xml.rels: ## Relation to images and layouts
+theme -> theme?.xml: 
+
+Since the .pptx example I used is very simple, the analysis may not contain all the important information. Next step, I will try to extract the core information from the .pptx (mainly include text, text font, text size, text location, image, image size, image location) through python script.
+
+The units in .pptx is EMUs, 914400 EMUs equals 1 inch. (http://officeopenxml.com/drwSp-size.php) 
+
+Found out that, the programming luanguage the ppt using is called DrawingML. 
+DrawingML is the language for defining graphical objects such as pictures, shapes, charts, and diagrams within ooxml documents.
+
+
+
 
 
 
