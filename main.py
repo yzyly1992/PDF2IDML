@@ -33,16 +33,19 @@ with open("./temp/docProps/app.xml") as f:
     print(slides)
 
 ## open slideX.xml 
-for i in range(2):  ## int(slides)
+for i in range(int(slides)):  ## int(slides)
     j = i + 1
-    f = open('./temp/ppt/slides/slide' + j + '.xml')
+    f = open('./temp/ppt/slides/slide' + str(j) + '.xml')
     data = f.read()
     soup = BeautifulSoup(data, 'xml')
 
-    frelation = open('./temp/ppt/slides/_rels/slide' + j + '.xml.rels')
+    frelation = open('./temp/ppt/slides/_rels/slide' + str(j) + '.xml.rels')
     frel_data = frelation.read()
     frel_soup = BeautifulSoup(frel_data, 'xml')
-    for relation in fre_soup.findall('Relationship'):
+    for relation in frel_soup.find_all('Relationship'):
+        if relation.get("Type") == "http://schemas.openxmlformats.org/officeDocument/2006/relationships/slideLayout":
+            lyt_addr = relation.get("Target")
+            print(lyt_addr)
 
 
 
